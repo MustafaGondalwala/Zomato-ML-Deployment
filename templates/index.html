@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+
+<title>Search Page</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="container-fluid content">
+    <h1 style="text-align: center">Predict Zomato Rate</h1>
+
+    <div class="form">
+        <form action="/predict" method="POST">
+            <input type="number" required name="online_order" id="online_order" placeholder="Online Order (0 or 1)">
+            <input type="number" required name="book_table" id="book_table" placeholder="Book Table (0 or 1)">
+            <input type="number" required name="votes" id="votes" placeholder="Votes">
+            <input type="number" required name="location" id="location" placeholder="Location">
+            <input type="number" required name="rest_type" id="rest_type" placeholder="Rest Type (1 to 86)">
+            <input type="number" required name="cuisines" id="cuisines" placeholder="Cuisines (1 to 2366)">
+            <input type="number" required name="cost" id="cost" placeholder="Cost">
+            <input type="number" required name="type" id="type" placeholder="Type">
+            <input type="number" required name="city" id="city" placeholder="City (1 to 29)">
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+</div>
+{% endblock %}
+© 2020 GitHub, Inc.
